@@ -141,10 +141,241 @@ Here’s a complete **list of questions to prepare for a machine round + full te
 
 ---
 
-Would you like:
+Here are **20 PHP pattern programs** commonly asked in interviews. You can copy and run them directly in any PHP environment.
 
-* A **PDF version** of this list?
-* **Categorized practice questions with answers?**
-* **Code test series** in PHP or Laravel?
+---
 
-Let me know and I can generate that for you!
+### ✅ 1. Left-Aligned Triangle
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    echo str_repeat("*", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 2. Right-Aligned Triangle
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    echo str_repeat(" ", 5 - $i) . str_repeat("*", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 3. Pyramid
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    echo str_repeat(" ", 5 - $i) . str_repeat("* ", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 4. Inverted Left Triangle
+
+```php
+for($i = 5; $i >= 1; $i--) {
+    echo str_repeat("*", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 5. Inverted Right Triangle
+
+```php
+for($i = 5; $i >= 1; $i--) {
+    echo str_repeat(" ", 5 - $i) . str_repeat("*", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 6. Diamond Pattern
+
+```php
+$n = 5;
+for($i = 1; $i <= $n; $i++) {
+    echo str_repeat(" ", $n - $i) . str_repeat("* ", $i) . "\n";
+}
+for($i = $n - 1; $i >= 1; $i--) {
+    echo str_repeat(" ", $n - $i) . str_repeat("* ", $i) . "\n";
+}
+```
+
+---
+
+### ✅ 7. Half Diamond
+
+```php
+$n = 5;
+for($i = 1; $i <= $n; $i++) echo str_repeat("*", $i) . "\n";
+for($i = $n - 1; $i >= 1; $i--) echo str_repeat("*", $i) . "\n";
+```
+
+---
+
+### ✅ 8. Number Pyramid
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    for($j = 1; $j <= $i; $j++) echo $j;
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 9. Floyd’s Triangle
+
+```php
+$count = 1;
+for($i = 1; $i <= 5; $i++) {
+    for($j = 1; $j <= $i; $j++) echo $count++ . " ";
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 10. Pascal's Triangle
+
+```php
+function fact($n) {
+    return ($n <= 1) ? 1 : $n * fact($n - 1);
+}
+for($i = 0; $i < 5; $i++) {
+    for($j = 0; $j <= $i; $j++) {
+        echo fact($i) / (fact($j) * fact($i - $j)) . " ";
+    }
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 11. Binary Triangle
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    for($j = 1; $j <= $i; $j++) echo $j % 2;
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 12. Hollow Square
+
+```php
+$n = 5;
+for($i = 1; $i <= $n; $i++) {
+    for($j = 1; $j <= $n; $j++) {
+        echo ($i == 1 || $i == $n || $j == 1 || $j == $n) ? "*" : " ";
+    }
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 13. Cross (X) Pattern
+
+```php
+$n = 5;
+for($i = 1; $i <= $n; $i++) {
+    for($j = 1; $j <= $n; $j++) {
+        echo ($j == $i || $j == $n - $i + 1) ? "*" : " ";
+    }
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 14. Numeric Square
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    echo str_repeat($i, 5) . "\n";
+}
+```
+
+---
+
+### ✅ 15. Incrementing Number Triangle
+
+```php
+$k = 1;
+for($i = 1; $i <= 5; $i++) {
+    for($j = 1; $j <= $i; $j++) echo $k++ . " ";
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 16. Reverse Number Triangle
+
+```php
+for($i = 5; $i >= 1; $i--) {
+    for($j = $i; $j >= 1; $j--) echo $j;
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 17. Star with Space Triangle
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    for($j = 1; $j <= $i; $j++) echo "* ";
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 18. Mirror Number Triangle
+
+```php
+for($i = 1; $i <= 5; $i++) {
+    echo str_repeat(" ", 5 - $i);
+    for($j = 1; $j <= $i; $j++) echo $j;
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 19. Alphabet Triangle
+
+```php
+for($i = 65; $i < 70; $i++) {
+    for($j = 65; $j <= $i; $j++) echo chr($j);
+    echo "\n";
+}
+```
+
+---
+
+### ✅ 20. Hollow Triangle
+
+```php
+$n = 5;
+for($i = 1; $i <= $n; $i++) {
+    for($j = 1; $j <= $i; $j++) {
+        if ($j == 1 || $j == $i || $i == $n) echo "*";
+        else echo " ";
+    }
+    echo "\n";
+}
+```
+
+---
+
