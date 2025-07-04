@@ -12,10 +12,81 @@ Here’s a complete **list of questions to prepare for a machine round + full te
 ### 🔹 **Pattern Printing**
 
 1. Print pyramid/star patterns with input validation.
-2. Create symmetrical shapes using `@`, `*`, or numbers.
-3. Print a diamond, hourglass, or Z-shape pattern.
-4. Print Pascal's Triangle.
-5. Numeric pyramid (e.g., 1, 121, 12321).
+   
+   
+    
+    ### ✅ **Objective:**
+    
+    * Accept number of rows from user input.
+    * Validate input (must be a positive integer).
+    * Print a centered star (`*`) pyramid pattern.
+
+    ---
+    
+    ### 🌟 **Sample Output (for input `5`):**
+    
+    ```
+        *    
+       ***   
+      *****  
+     ******* 
+    *********
+    ```
+    
+    ---
+    
+    ### ✅ **PHP Code:**
+    
+    ```php
+    <?php
+    function printPyramid($rows) {
+        for ($i = 1; $i <= $rows; $i++) {
+            // Print spaces
+            for ($j = 1; $j <= $rows - $i; $j++) {
+                echo " ";
+            }
+    
+            // Print stars
+            for ($k = 1; $k <= (2 * $i - 1); $k++) {
+                echo "*";
+            }
+    
+            echo PHP_EOL;
+        }
+    }
+    
+    // Input validation
+    echo "Enter number of rows for pyramid: ";
+    $handle = fopen("php://stdin", "r");
+    $input = trim(fgets($handle));
+    
+    // Validate input
+    if (!ctype_digit($input) || (int)$input <= 0) {
+        echo "Invalid input. Please enter a positive integer." . PHP_EOL;
+        exit(1);
+    }
+    
+    $rows = (int)$input;
+    printPyramid($rows);
+    ?>
+    ```
+    
+    ---
+    
+    ### 🧠 **Key Interview Concepts Covered:**
+    
+    * Input handling using `fgets()`.
+    * Validation using `ctype_digit()` and type casting.
+    * Looping logic for centered pyramid printing.
+    * Clean code and structured function usage.
+    
+    ---
+
+
+3. Create symmetrical shapes using `@`, `*`, or numbers.
+4. Print a diamond, hourglass, or Z-shape pattern.
+5. Print Pascal's Triangle.
+6. Numeric pyramid (e.g., 1, 121, 12321).
 
 ---
 
